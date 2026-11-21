@@ -1,0 +1,850 @@
+body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: #0d0d0d;
+        color: #e0e0e0;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+    }
+
+    h1 {
+        font-size: clamp(2.2rem, 6vw, 4rem);
+        color: #ffffff;
+    }
+
+    h2 {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    h2 span {
+        color: #c9a96e;
+    }
+
+    .section-subtitle {
+        color: #888;
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin-bottom: 50px;
+    }
+
+    /* ---------- ЦВЕТОВАЯ ПАЛИТРА ---------- */
+    :root {
+        --gold: #c9a96e;
+        --gold-dark: #a8884a;
+        --dark-bg: #0d0d0d;
+        --card-bg: #1a1a1a;
+        --border-color: #2a2a2a;
+    }
+
+    /* ---------- КНОПКИ ---------- */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 32px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: #0d0d0d;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+    }
+
+    .btn-outline {
+        background: transparent;
+        border: 2px solid var(--gold);
+        color: var(--gold);
+    }
+
+    .btn-outline:hover {
+        background: rgba(201, 169, 110, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .btn-messenger {
+        background: #1f1f1f;
+        border: 1px solid #333;
+        color: #fff;
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    .btn-messenger:hover {
+        border-color: var(--gold);
+        background: #2a2a2a;
+        transform: translateY(-2px);
+    }
+
+    /* ---------- ХЕДЕР ---------- */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(13, 13, 13, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 15px 0;
+        transition: all 0.3s;
+    }
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #fff;
+    }
+
+    .logo span {
+        color: var(--gold);
+    }
+
+    .header-contacts {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .header-phone {
+        font-weight: 600;
+        color: #fff;
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    .header-phone:hover {
+        color: var(--gold);
+    }
+
+    /* ---------- ГЛАВНЫЙ ЭКРАН (HERO) ---------- */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 120px 0 80px;
+        background: radial-gradient(ellipse at 70% 30%, rgba(201, 169, 110, 0.08) 0%, transparent 60%);
+    }
+
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        margin-bottom: 24px;
+    }
+
+    .hero-content p {
+        font-size: 1.15rem;
+        color: #aaa;
+        margin-bottom: 36px;
+        max-width: 500px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    .hero-messengers {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+}
+
+    .hero-messengers-label {
+        color: #666;
+        font-size: 0.9rem;
+        margin-right: 4px;
+    }
+
+    .hero-image {
+        position: relative;
+        height: 500px;
+        border-radius: 24px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border-color);
+    }
+
+    .hero-image-placeholder {
+        text-align: center;
+        color: #444;
+        padding: 20px;
+    }
+
+    .hero-image-placeholder svg {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 16px;
+        opacity: 0.3;
+    }
+
+    .hero-image-placeholder p {
+        font-size: 0.9rem;
+    }
+
+    /* ---------- ПРЕИМУЩЕСТВА ---------- */
+    .features {
+        padding: 100px 0;
+        background: #111;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+    }
+
+    .feature-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 32px 28px;
+        transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+        border-color: var(--gold);
+        transform: translateY(-4px);
+    }
+
+    .feature-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        background: rgba(201, 169, 110, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        font-size: 1.6rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 12px;
+        color: #fff;
+    }
+
+    .feature-card p {
+        color: #888;
+        font-size: 0.95rem;
+    }
+
+    /* ---------- ДО / ПОСЛЕ ---------- */
+    .before-after {
+        padding: 100px 0;
+    }
+
+    .ba-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+
+    .ba-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.3s;
+    }
+
+    .ba-card:hover {
+        border-color: var(--gold);
+    }
+
+    .ba-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 240px;
+    }
+
+    .ba-half {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #151515;
+        color: #444;
+        font-size: 0.85rem;
+    }
+
+    .ba-half.before {
+        background: #1a1515;
+    }
+
+    .ba-half.after {
+        background: #151a15;
+    }
+
+    .ba-label {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .ba-label.before {
+        background: rgba(255, 100, 100, 0.2);
+        color: #ff8888;
+    }
+
+    .ba-label.after {
+        background: rgba(100, 255, 100, 0.15);
+        color: #88ff88;
+    }
+
+    .ba-info {
+        padding: 20px 24px;
+    }
+
+    .ba-info h4 {
+        font-size: 1rem;
+        color: #fff;
+        margin-bottom: 4px;
+    }
+
+    .ba-info p {
+        font-size: 0.85rem;
+        color: #777;
+    }
+
+    /* ---------- ЭТАПЫ РАБОТЫ ---------- */
+    .steps {
+        padding: 100px 0;
+        background: #111;
+    }
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        position: relative;
+    }
+
+    .step-card {
+        text-align: center;
+        padding: 30px 20px;
+        position: relative;
+    }
+
+    .step-number {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: rgba(201, 169, 110, 0.1);
+        border: 2px solid var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        font-weight: 700;
+color: var(--gold);
+        margin: 0 auto 20px;
+    }
+
+    .step-card h3 {
+        font-size: 1.05rem;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+
+    .step-card p {
+        font-size: 0.9rem;
+        color: #888;
+    }
+
+    /* ---------- КОНТАКТЫ / CTA ---------- */
+    .cta {
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .cta h2 {
+        margin-bottom: 16px;
+    }
+
+    .cta p {
+        color: #999;
+        font-size: 1.1rem;
+        margin-bottom: 36px;
+    }
+
+    .cta-contacts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #ccc;
+        font-size: 1rem;
+    }
+
+    .contact-item svg {
+        width: 22px;
+        height: 22px;
+        fill: var(--gold);
+        flex-shrink: 0;
+    }
+
+    .contact-item a:hover {
+        color: var(--gold);
+    }
+
+    .cta-messengers {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    /* ---------- ФУТЕР ---------- */
+    footer {
+        border-top: 1px solid var(--border-color);
+        padding: 30px 0;
+        text-align: center;
+        color: #555;
+        font-size: 0.85rem;
+    }
+
+    footer a {
+        color: #777;
+    }
+
+    footer a:hover {
+        color: var(--gold);
+    }
+
+    /* ---------- АДАПТИВ ---------- */
+    @media (max-width: 900px) {
+        .hero-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .hero-image {
+            height: 300px;
+            order: -1;
+        }
+
+        .header-phone {
+            display: none;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .hero-buttons {
+            flex-direction: column;
+        }
+
+        .hero-buttons .btn {
+            width: 100%;
+        }
+
+        .hero-messengers {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .btn-messenger {
+            justify-content: center;
+        }
+
+        .ba-images {
+            height: 180px;
+        }
+
+        .cta-messengers {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .cta-messengers .btn {
+            width: 100%;
+        }
+
+        .header-contacts {
+            gap: 12px;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+        }
+    }
+
+    /* ---------- УТИЛИТЫ ---------- */
+    .text-center { text-align: center; }
+    .mt-20 { margin-top: 20px; }
+    .mb-40 { margin-bottom: 40px; }
+</style>
+<!-- ХЕДЕР -->
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">BRAND<span>EX</span></a>
+        <div class="header-contacts">
+            <a href="tel:+79512244277" class="header-phone">+7 (951) 224-42-77</a>
+            <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Связаться</a>
+        </div>
+    </div>
+</header>
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <h1>Вернём любимым вещам <span style="color: var(--gold);">жизнь</span></h1>
+            <p>Профессиональная реставрация кожаных курток, сумок, кошельков и обуви в Кемерове. Оценим стоимость по фото в мессенджере за 10 минут.</p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary" id="calcBtn">📸 Рассчитать стоимость</a>
+                <a href="tel:+79512244277" class="btn btn-outline">📞 Позвонить</a>
+            </div>
+
+            <div class="hero-messengers">
+                <span class="hero-messengers-label">Или пришлите фото:</span>
+                <a href="#" class="btn btn-messenger" id="waBtn">WhatsApp</a>
+                <a href="#" class="btn btn-messenger" id="tgBtn">Telegram</a>
+                <a href="#" class="btn btn-messenger" id="maxBtn">MAX</a>
+            </div>
+</div>
+
+        <div class="hero-image">
+            <div class="hero-image-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                </svg>
+                <p>Фото вашего изделия<br>до / после реставрации</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ПРЕИМУЩЕСТВА -->
+<section class="features">
+    <div class="container">
+        <h2>Почему <span>Brandex</span></h2>
+        <p class="section-subtitle">Мы не просто маскируем дефекты — мы восстанавливаем структуру кожи и продлеваем жизнь вещам.</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🛠️</div>
+                <h3>Опыт более 9 лет</h3>
+                <p>Работаем с кожей любой сложности: от повседневной обуви до брендовых сумок и курток.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <h3>Оценка по фото</h3>
+                <p>Не нужно никуда ехать. Пришлите фото в мессенджер — назовём стоимость и сроки.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚗</div>
+                <h3>Курьер по городу</h3>
+                <p>Бесплатно заберём изделие и вернём обратно после реставрации в удобное время.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Гарантия результата</h3>
+                <p>Используем профессиональные материалы и согласовываем каждый этап работы.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ДО / ПОСЛЕ -->
+<section class="before-after">
+    <div class="container">
+        <h2>Наши <span>работы</span></h2>
+        <p class="section-subtitle">Реальные примеры реставрации кожаных изделий в Кемерове.</p>
+
+        <div class="ba-grid">
+            <div class="ba-card">
+                <div class="ba-images">
+                    <div class="ba-half before">
+                        <span class="ba-label before">До</span>
+                        <span>Фото до</span>
+                    </div>
+                    <div class="ba-half after">
+                        <span class="ba-label after">После</span>
+                        <span>Фото после</span>
+                    </div>
+                </div>
+                <div class="ba-info">
+                    <h4>Реставрация сумки</h4>
+                    <p>Восстановление ручек и канта, покраска кожи.</p>
+                </div>
+            </div>
+
+            <div class="ba-card">
+                <div class="ba-images">
+                    <div class="ba-half before">
+                        <span class="ba-label before">До</span>
+                        <span>Фото до</span>
+                    </div>
+                    <div class="ba-half after">
+                        <span class="ba-label after">После</span>
+                        <span>Фото после</span>
+                    </div>
+                </div>
+                <div class="ba-info">
+                    <h4>Реставрация куртки</h4>
+                    <p>Устранение потёртостей, восстановление цвета.</p>
+                </div>
+            </div>
+
+            <div class="ba-card">
+                <div class="ba-images">
+                    <div class="ba-half before">
+                        <span class="ba-label before">До</span>
+                        <span>Фото до</span>
+                    </div>
+                    <div class="ba-half after">
+                        <span class="ba-label after">После</span>
+                        <span>Фото после</span>
+                    </div>
+                </div>
+                <div class="ba-info">
+                    <h4>Реставрация обуви</h4>
+                    <p>Восстановление кожи, замена фурнитуры.</p>
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ЭТАПЫ РАБОТЫ -->
+<section class="steps">
+    <div class="container">
+        <h2>Как мы <span>работаем</span></h2>
+        <p class="section-subtitle">Прозрачный процесс от первого сообщения до готового результата.</p>
+
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Пришлите фото</h3>
+                <p>Напишите в любой мессенджер и отправьте фото изделия.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Оценка и сроки</h3>
+                <p>Мы оценим сложность, назовём стоимость и время работы.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Забираем изделие</h3>
+                <p>Курьер бесплатно заберёт вещь по городу Кемерово.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Реставрация</h3>
+                <p>Мастер выполняет работу и согласовывает результат.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <h3>Доставка</h3>
+                <p>Возвращаем изделие в идеальном состоянии.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- КОНТАКТЫ / CTA -->
+<section class="cta" id="contact">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Готовы вернуть вещи <span>вид?</span></h2>
+            <p>Пришлите фото изделия в удобный мессенджер — мы оценим стоимость и ответим в течение 10 минут.</p>
+
+            <div class="cta-messengers">
+                <a href="#" class="btn btn-messenger" id="waBtn2" style="padding: 14px 32px; font-size: 1rem;">WhatsApp</a>
+                <a href="#" class="btn btn-messenger" id="tgBtn2" style="padding: 14px 32px; font-size: 1rem;">Telegram</a>
+                <a href="#" class="btn btn-messenger" id="maxBtn2" style="padding: 14px 32px; font-size: 1rem;">MAX</a>
+            </div>
+
+            <div class="cta-contacts">
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span>Кемерово, ул. Карболитовская, 1/1, оф. 212</span>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <a href="tel:+79512244277">+7 (951) 224-42-77</a>
+                </div>
+            </div>
+
+            <p style="color: #555; font-size: 0.85rem; margin-top: 20px;">Режим работы: Пн–Пт 10:00–16:30</p>
+        </div>
+    </div>
+</section>
+
+<!-- ФУТЕР -->
+<footer>
+    <div class="container">
+        <p>© 2026 Brandex — Студия реставрации кожаных изделий в Кемерове.</p>
+    </div>
+</footer>
+
+<script>
+    (function() {
+        // ---------- КОНФИГУРАЦИЯ ----------
+        const PHONE = '79512244277'; // номер без + и пробелов
+        const WA_TEXT = encodeURIComponent('Здравствуйте! Хочу рассчитать стоимость реставрации. Прикрепляю фото.');
+        const TG_TEXT = encodeURIComponent('Здравствуйте! Хочу рассчитать стоимость реставрации. Прикрепляю фото.');
+
+        // ---------- ССЫЛКИ WHATSAPP ----------
+        // Формат: https://wa.me/PHONE?text=...
+        const waUrl = `https://wa.me/${PHONE}?text=${WA_TEXT}`;
+
+        // ---------- ССЫЛКИ TELEGRAM ----------
+        // Telegram по номеру: https://t.me/+79512244277
+        const tgUrl =lor: #0d0d0d;
+        colo
+
+        // ---------- НАЗНАЧЕНИЕ КНОПОК ----------
+const waBtns = ['waBtn', 'waBtn2'];
+        const tgBtns = ['tgBtn', 'tgBtn2'];
+        const maxBtns = ['maxBtn', 'maxBtn2'];
+
+        waBtns.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.href = waUrl;
+                el.target = '_blank';
+            }
+        });
+
+        tgBtns.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.href = tgUrl;
+                el.target = '_blank';
+            }
+        });
+
+        // ---------- MAX (мессенджер) ----------
+        // MAX не поддерживает прямые ссылки по номеру, поэтому копируем ссылку или номер
+        maxBtns.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.href = '#';
+                el.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Копируем номер телефона в буфер обмена
+                    const phoneText = '+7 (951) 224-42-77';
+                    navigator.clipboard.writeText(phoneText).then(() => {
+                        // Показываем уведомление
+                        const originalText = el.textContent;
+                        el.textContent = '✓ Номер скопирован';
+                        el.style.borderColor = '#c9a96e';
+                        setTimeout(() => {
+                            el.textContent = originalText;
+                            el.style.borderColor = '#333';
+                        }, 2000);
+                    }).catch(() => {
+                        // Фолбэк, если clipboard недоступен
+                        prompt('Скопируйте номер телефона для MAX:', phoneText);
+                    });
+                });
+            }
+        });
+
+        // ---------- КНОПКА "РАССЧИТАТЬ СТОИМОСТЬ" ----------
+        const calcBtn = document.getElementById('calcBtn');
+        if (calcBtn) {
+            calcBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Скролл к блоку контактов
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // ---------- ПЛАВНЫЙ СКРОЛЛ ДЛЯ ЯКОРНЫХ ССЫЛОК ----------
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ---------- ЭФФЕКТ ПРИ СКРОЛЛЕ (ХЕДЕР) ----------
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(13, 13, 13, 0.95)';
+            } else {
+                header.style.background = 'rgba(13, 13, 13, 0.85)';
+            }
+        });
+    })();
+</script>
